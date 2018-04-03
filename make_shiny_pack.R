@@ -12,6 +12,9 @@ args <- commandArgs(trailingOnly=T)
 inpath <- args[1]
 outpath <- args[2]
 
+HOMEPATH <- "$HOME/Projects/201801\ wikiwords/wikiwords"
+source("%s/tda_functions.R", HOMEPATH)
+
 # CONVENTION 
 # look in 'inpath' for 3 files 'wdict.txt', 'wcounts.txt', 'w.vectors.txt'
 # write to 'outpath' the following:
@@ -78,8 +81,6 @@ text(2e03, 1000,
 dev.off()
 
 cat(sprintf("Plot written to %s/word_frequency_distribution.pdf\n", args[2]))
-
-source("tda_functions.R")
 
 ################################################################
 # exponential binning of frequency using the power law model:

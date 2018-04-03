@@ -39,6 +39,7 @@ makeclusters_centroids <- function(bins, coarseness){
   
   cluster.set <- list()
   ccount <- 0
+  nc <- ncol(dat3)
   
   recurse.func <- function(hc, bin.nr, ccount){
     
@@ -47,7 +48,7 @@ makeclusters_centroids <- function(bins, coarseness){
       if(length(set) < coarseness){
         # update global variables:
         ccount <- ccount + 1
-        centroid <- colSums( alldat[set, 2:201] )/length(set)
+        centroid <- colSums( alldat[set, 2:nc] )/length(set)
         cluster.set[[ccount]] <<- list(cluster=set, centroid=centroid, height=bin.nr)
         cat(sprintf("%d %d       \r", length(set), ccount))
       } else {
@@ -62,7 +63,7 @@ makeclusters_centroids <- function(bins, coarseness){
     
     bin <- bins[[nr]]
     cat(sprintf("Bin %d                           \n", nr))
-    bindist <- dist(alldat[bin, 2:201], method="euclidean") 
+    bindist <- dist(alldat[bin, 2:nc], method="euclidean") 
     hc <- as.dendrogram( hclust(bindist) )
     ccount <- recurse.func(hc, nr, ccount)
     cat("\r")

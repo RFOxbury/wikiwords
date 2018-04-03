@@ -3,16 +3,17 @@
 # TEST:
 #
 # ./make_shiny_data.R ../wikipedia ./tmp
-#
 # OR for testing:
 # args <- c("../wikipedia","tmp")
 
 args <- commandArgs(trailingOnly=T)
 
+args <- c("./data", "./shiny/wordrep")
+
 inpath <- args[1]
 outpath <- args[2]
 
-HOMEPATH <- "$HOME/Projects/201801\ wikiwords/wikiwords"
+HOMEPATH <- "/Users/bill/Projects/201801-wikiwords/wikiwords"
 source(sprintf("%s/tda_functions.R", HOMEPATH))
 
 # CONVENTION 

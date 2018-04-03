@@ -13,7 +13,7 @@ inpath <- args[1]
 outpath <- args[2]
 
 HOMEPATH <- "$HOME/Projects/201801\ wikiwords/wikiwords"
-source("%s/tda_functions.R", HOMEPATH)
+source(sprintf("%s/tda_functions.R", HOMEPATH))
 
 # CONVENTION 
 # look in 'inpath' for 3 files 'wdict.txt', 'wcounts.txt', 'w.vectors.txt'

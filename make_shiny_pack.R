@@ -13,8 +13,8 @@ args <- c("./data", "./shiny/wordrep")
 inpath <- args[1]
 outpath <- args[2]
 
-HOMEPATH <- "/Users/bill/Projects/201801-wikiwords/wikiwords"
-source(sprintf("%s/tda_functions.R", HOMEPATH))
+#HOMEPATH <- "/Users/bill/Projects/201801-wikiwords/wikiwords"
+source(sprintf("%s/tda_functions.R"))
 
 # CONVENTION 
 # look in 'inpath' for 3 files 'wdict.txt', 'wcounts.txt', 'w.vectors.txt'
